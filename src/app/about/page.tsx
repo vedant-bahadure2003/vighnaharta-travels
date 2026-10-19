@@ -13,9 +13,7 @@ import {
   Stack,
   Chip,
   Card,
-  CardContent,
 } from '@mui/material';
-import ExploreIcon from '@mui/icons-material/Explore';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import NaturePeopleIcon from '@mui/icons-material/NaturePeople';

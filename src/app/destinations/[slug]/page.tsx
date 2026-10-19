@@ -12,7 +12,6 @@ import {
   Button,
   Stack,
   Paper,
-  Divider,
   Breadcrumbs,
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -21,7 +20,6 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ExploreIcon from '@mui/icons-material/Explore';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import SectionHeader from '@/components/common/SectionHeader';
 import PackageCard from '@/components/packages/PackageCard';
 import EnquiryForm from '@/components/enquiry/EnquiryForm';
 import { destinations, getDestinationBySlug } from '@/data/destinations';

@@ -11,7 +11,6 @@ import {
   Chip,
   Button,
   Stack,
-  Divider,
 } from '@mui/material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import GroupsIcon from '@mui/icons-material/Groups';

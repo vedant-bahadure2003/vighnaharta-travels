@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import {
   Box,
   Container,
@@ -12,15 +11,11 @@ import {
   CardContent,
   Dialog,
   IconButton,
-  Chip,
-  Button,
-  Stack,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
-import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import SectionHeader from '@/components/common/SectionHeader';
 import CTASection from '@/components/common/CTASection';
 import { galleryImages, GalleryImage } from '@/data/gallery';

@@ -18,8 +18,6 @@ import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import LandscapeIcon from '@mui/icons-material/Landscape';
-import { siteConfig } from '@/data/site-config';
 
 export default function HeroSection() {
   return (

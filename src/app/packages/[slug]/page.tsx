@@ -12,7 +12,6 @@ import {
   Button,
   Stack,
   Paper,
-  Divider,
   Breadcrumbs,
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';

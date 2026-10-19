@@ -7,7 +7,6 @@ import {
   Grid,
   Typography,
   Paper,
-  Stack,
 } from '@mui/material';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import MapIcon from '@mui/icons-material/Map';
