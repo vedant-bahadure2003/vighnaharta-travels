@@ -26,7 +26,7 @@ export const siteConfig = {
   // Contact details
   contact: {
     phone: '+91 9009 25 9005',
-    whatsapp: '+91 98819 53564',
+    whatsapp: '+91 9009 25 9005',
     email: 'Vighnahartatours.Adventure@gmail.com',
     address: 'Pan-India Tours & Expeditions',
   },
