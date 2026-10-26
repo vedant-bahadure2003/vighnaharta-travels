@@ -2,8 +2,8 @@ export const navigationLinks = [
   { label: 'Home', href: '/' },
   { label: 'Destinations', href: '/destinations' },
   { label: 'Tour Packages', href: '/packages' },
+  { label: 'Past Journeys', href: '/memories' },
   { label: 'About Us', href: '/about' },
-  // { label: 'Travel Memories', href: '/memories' },
   { label: 'Contact', href: '/contact' },
 ] as const;
 

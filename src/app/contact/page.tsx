@@ -20,7 +20,6 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import SendIcon from '@mui/icons-material/Send';
 import SectionHeader from '@/components/common/SectionHeader';
 import { siteConfig } from '@/data/site-config';

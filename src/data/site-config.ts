@@ -7,32 +7,34 @@ export const siteConfig = {
 
   // Owner / Lead Host details
   owner: {
-    name: 'Lead Travel Host',
-    role: 'Founder & Expedition Host',
+    name: 'Aditya Khursade',
+    role: 'Founder & Lead Expedition Host',
     introduction:
-      'Passionate about creating meaningful travel experiences that bring people together. Every trip is thoughtfully planned to ensure comfort, adventure, and lasting memories.',
+      'Passionate mountaineer and expedition host creating meaningful travel experiences across India. Every trip is thoughtfully planned and personally hosted to ensure safety, adventure, and lifelong memories.',
     philosophy:
-      'Travel is not just about visiting places — it\'s about the stories we create, the connections we build, and the perspectives we gain along the way.',
+      'Travel is not just about visiting places — it is about the stories we create, the camaraderie we build, and the transformative perspectives we gain along the way.',
     personalMessage:
-      'Whether you\'re seeking a spiritual journey to the Himalayas, an adrenaline-pumping adventure, or a relaxing getaway with loved ones, I\'m here to make it happen. Let\'s plan something extraordinary together.',
+      'Whether you are seeking a sacred pilgrimage to the Himalayas, an adrenaline-pumping Sahyadri trek, or a relaxing getaway with friends and family, I accompany you every step of the way. Let us explore something extraordinary together.',
     images: {
-      portrait: '/images/owner/owner-kedarnath-portrait.png',
+      portrait: '/images/char-dham/WhatsApp Image 2026-10-26 at 10.49.01 PM (1).jpeg',
       backwaters: '/images/owner/owner-backwaters.png',
-      couple: '/images/owner/owner-kedarnath-couple.png',
-      waterfall: '/images/owner/owner-waterfall.png',
+      couple: '/images/char-dham/WhatsApp Image 2026-10-26 at 10.48.24 PM.jpeg',
+      waterfall: '/images/secret-waterfall/WhatsApp Image 2026-10-26 at 10.42.11 PM.jpeg',
     },
   },
 
   // Contact details
   contact: {
-    phone: '+91 9009 25 9005',
-    whatsapp: '+91 9009 25 9005',
-    email: 'Vighnahartatours.Adventure@gmail.com',
-    address: 'Pan-India Tours & Expeditions',
+    phone: '+91 98819 53564',
+    whatsapp: '+91 98819 53564',
+    secondaryPhone: '+91 9009 25 9005',
+    alternatePhone: '+91 95290 85965',
+    email: 'vighnahartatours.adventure@gmail.com',
+    address: 'Pan-India Tours & Expeditions | Base: Akola / Washim / Pune',
   },
 
   social: {
-    instagram: '#',
+    instagram: 'https://instagram.com/vighnaharta_tours_and_adventure',
     facebook: '#',
     youtube: '#',
     twitter: '#',
