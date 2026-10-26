@@ -33,6 +33,8 @@ interface DestinationPageProps {
   }>;
 }
 
+export const instant = false;
+
 export async function generateStaticParams() {
   return destinations.map((d) => ({
     slug: d.slug,

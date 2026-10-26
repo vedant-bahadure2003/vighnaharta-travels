@@ -32,6 +32,8 @@ interface PackagePageProps {
   }>;
 }
 
+export const instant = false;
+
 export async function generateStaticParams() {
   return packages.map((p) => ({
     slug: p.slug,
