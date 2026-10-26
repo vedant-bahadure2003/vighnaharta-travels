@@ -13,6 +13,9 @@ import {
 } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
 import HeroSection from '@/components/home/HeroSection';
 import TrustBadges from '@/components/home/TrustBadges';
 import SectionHeader from '@/components/common/SectionHeader';
@@ -22,7 +25,7 @@ import OwnerStoryPreview from '@/components/home/OwnerStoryPreview';
 import FeaturedMemories from '@/components/home/FeaturedMemories';
 import FAQSection from '@/components/home/FAQSection';
 import CTASection from '@/components/common/CTASection';
-import EnquiryForm from '@/components/enquiry/EnquiryForm';
+import { siteConfig } from '@/data/site-config';
 import { destinations } from '@/data/destinations';
 import { packages } from '@/data/packages';
 
@@ -182,12 +185,177 @@ export default function HomePage() {
               </Paper>
             </Grid>
 
-            {/* Right form */}
+            {/* Right: Direct Contact & WhatsApp Action Hub */}
             <Grid size={{ xs: 12, md: 7 }}>
-              <EnquiryForm
-                title="Start Planning Your Trip"
-                subtitle="Share your preferred destinations and dates. We will design the best route for you."
-              />
+              <Stack spacing={3}>
+                {/* Featured WhatsApp Action Card */}
+                <Paper
+                  elevation={0}
+                  sx={{
+                    p: { xs: 3, sm: 4 },
+                    borderRadius: 4,
+                    backgroundColor: '#FFFFFF',
+                    border: '2px solid #25D366',
+                    boxShadow: '0 12px 30px rgba(37, 211, 102, 0.12)',
+                    position: 'relative',
+                    overflow: 'hidden',
+                  }}
+                >
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      top: 0,
+                      right: 0,
+                      backgroundColor: '#25D366',
+                      color: '#FFFFFF',
+                      fontSize: '0.72rem',
+                      fontWeight: 800,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.04em',
+                      py: 0.6,
+                      px: 2,
+                      borderBottomLeftRadius: 12,
+                    }}
+                  >
+                    Direct Host Access
+                  </Box>
+
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
+                    <Box
+                      sx={{
+                        width: 52,
+                        height: 52,
+                        borderRadius: 3,
+                        backgroundColor: '#DCFCE7',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <WhatsAppIcon sx={{ fontSize: 30, color: '#25D366' }} />
+                    </Box>
+                    <Box>
+                      <Typography variant="caption" sx={{ color: '#166534', fontWeight: 700, textTransform: 'uppercase' }}>
+                        Fastest Response
+                      </Typography>
+                      <Typography variant="h6" sx={{ fontWeight: 800, color: 'text.primary', lineHeight: 1.2 }}>
+                        Chat on WhatsApp
+                      </Typography>
+                    </Box>
+                  </Box>
+
+                  <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2.5, lineHeight: 1.6 }}>
+                    No forms or waiting. Message our expedition host directly on WhatsApp. We share custom itineraries, route recommendations, and group dates within minutes.
+                  </Typography>
+
+                  <Button
+                    component="a"
+                    href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hi Vighnaharta Tours! I would like to plan a custom trip. Please share details and itinerary options.')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="contained"
+                    size="large"
+                    fullWidth
+                    startIcon={<WhatsAppIcon />}
+                    sx={{
+                      backgroundColor: '#25D366',
+                      color: '#FFFFFF',
+                      fontWeight: 700,
+                      py: 1.5,
+                      borderRadius: 2.5,
+                      fontSize: '1rem',
+                      boxShadow: '0 6px 20px rgba(37, 211, 102, 0.35)',
+                      '&:hover': {
+                        backgroundColor: '#1EBE5D',
+                      },
+                    }}
+                  >
+                    Chat on WhatsApp ({siteConfig.contact.whatsapp})
+                  </Button>
+                </Paper>
+
+                {/* Secondary Call & Email Grid */}
+                <Grid container spacing={2}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
+                    <Paper
+                      elevation={0}
+                      sx={{
+                        p: 2.5,
+                        borderRadius: 3,
+                        backgroundColor: '#FFFFFF',
+                        border: '1px solid #E2E8F0',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: '100%',
+                      }}
+                    >
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
+                        <PhoneIcon sx={{ color: 'primary.main', fontSize: 20 }} />
+                        <Typography variant="subtitle2" sx={{ fontWeight: 800, color: 'text.primary' }}>
+                          Direct Call
+                        </Typography>
+                      </Box>
+                      <Typography variant="caption" sx={{ color: 'text.secondary', mb: 1.5 }}>
+                        Talk directly with trip host (9 AM - 9 PM)
+                      </Typography>
+                      <Button
+                        component="a"
+                        href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`}
+                        variant="outlined"
+                        size="small"
+                        fullWidth
+                        sx={{
+                          mt: 'auto',
+                          fontWeight: 700,
+                          borderRadius: 2,
+                        }}
+                      >
+                        Call {siteConfig.contact.phone}
+                      </Button>
+                    </Paper>
+                  </Grid>
+
+                  <Grid size={{ xs: 12, sm: 6 }}>
+                    <Paper
+                      elevation={0}
+                      sx={{
+                        p: 2.5,
+                        borderRadius: 3,
+                        backgroundColor: '#FFFFFF',
+                        border: '1px solid #E2E8F0',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: '100%',
+                      }}
+                    >
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
+                        <EmailIcon sx={{ color: '#F4A261', fontSize: 20 }} />
+                        <Typography variant="subtitle2" sx={{ fontWeight: 800, color: 'text.primary' }}>
+                          Email Us
+                        </Typography>
+                      </Box>
+                      <Typography variant="caption" sx={{ color: 'text.secondary', mb: 1.5 }}>
+                        Send custom RFPs or detailed queries
+                      </Typography>
+                      <Button
+                        component="a"
+                        href={`mailto:${siteConfig.contact.email}?subject=Custom%20Trip%20Inquiry%20-%20Vighnaharta%20Tours`}
+                        variant="outlined"
+                        color="warning"
+                        size="small"
+                        fullWidth
+                        sx={{
+                          mt: 'auto',
+                          fontWeight: 700,
+                          borderRadius: 2,
+                        }}
+                      >
+                        Send Email
+                      </Button>
+                    </Paper>
+                  </Grid>
+                </Grid>
+              </Stack>
             </Grid>
           </Grid>
         </Container>

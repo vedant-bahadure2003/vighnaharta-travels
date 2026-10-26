@@ -3,7 +3,7 @@ export const navigationLinks = [
   { label: 'Destinations', href: '/destinations' },
   { label: 'Tour Packages', href: '/packages' },
   { label: 'About Us', href: '/about' },
-  { label: 'Travel Memories', href: '/memories' },
+  // { label: 'Travel Memories', href: '/memories' },
   { label: 'Contact', href: '/contact' },
 ] as const;
 

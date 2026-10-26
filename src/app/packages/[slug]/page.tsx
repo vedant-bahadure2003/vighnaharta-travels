@@ -20,8 +20,9 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import GroupsIcon from '@mui/icons-material/Groups';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import EnquiryForm from '@/components/enquiry/EnquiryForm';
 import { packages, getPackageBySlug } from '@/data/packages';
 import { siteConfig } from '@/data/site-config';
 
@@ -325,49 +326,176 @@ export default async function PackageDetailPage({ params }: PackagePageProps) {
             </Box>
           </Grid>
 
-          {/* Right Column: Sticky Booking / Enquiry Form */}
+          {/* Right Column: Sticky Booking & Direct Host Connect */}
           <Grid size={{ xs: 12, md: 5 }}>
             <Box sx={{ position: { md: 'sticky' }, top: 90 }}>
-              <EnquiryForm
-                initialDestination={pkg.destination}
-                initialTravelType={getTravelTypeLabel(pkg.travelType)}
-                title={`Enquire for ${pkg.title}`}
-                subtitle={`Reserve your group slot or request custom dates for ${pkg.title}.`}
-              />
-
               <Paper
                 elevation={0}
                 sx={{
-                  p: 3,
-                  mt: 3,
-                  borderRadius: 3.5,
-                  backgroundColor: '#EFF6FF',
-                  border: '1px solid #DBEAFE',
-                  textAlign: 'center',
+                  p: { xs: 3, sm: 3.5 },
+                  borderRadius: 4,
+                  backgroundColor: '#FFFFFF',
+                  border: '2px solid #25D366',
+                  boxShadow: '0 12px 36px rgba(37, 211, 102, 0.12)',
+                  position: 'relative',
+                  overflow: 'hidden',
                 }}
               >
-                <Typography variant="subtitle2" sx={{ fontWeight: 700, color: '#1E40AF', mb: 1 }}>
-                  Have questions about this package?
-                </Typography>
-                <Typography variant="body2" sx={{ color: '#1E3A8A', mb: 2, fontSize: '0.85rem' }}>
-                  Ask about dates, group availability, and customization directly.
-                </Typography>
-                <Button
-                  href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hi, I'm enquiring about "${pkg.title}" (${pkg.days}D/${pkg.nights}N)!`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="contained"
-                  fullWidth
-                  startIcon={<WhatsAppIcon />}
+                {/* Header badge */}
+                <Box
                   sx={{
+                    position: 'absolute',
+                    top: 0,
+                    right: 0,
                     backgroundColor: '#25D366',
-                    '&:hover': { backgroundColor: '#1EBE5D' },
                     color: '#FFFFFF',
-                    fontWeight: 700,
+                    fontSize: '0.72rem',
+                    fontWeight: 800,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.04em',
+                    py: 0.6,
+                    px: 2,
+                    borderBottomLeftRadius: 12,
                   }}
                 >
-                  Quick Inquiry on WhatsApp
-                </Button>
+                  Instant Host Connect
+                </Box>
+
+                <Typography variant="overline" sx={{ color: 'text.secondary', fontWeight: 800, letterSpacing: '0.06em' }}>
+                  Tour Package Booking
+                </Typography>
+                <Typography variant="h5" sx={{ fontWeight: 800, color: 'text.primary', mb: 0.5 }}>
+                  {pkg.title}
+                </Typography>
+                <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2.5 }}>
+                  {pkg.days} Days / {pkg.nights} Nights • {pkg.destination}
+                </Typography>
+
+                {/* Price Display */}
+                <Box
+                  sx={{
+                    p: 2,
+                    mb: 3,
+                    borderRadius: 3,
+                    backgroundColor: '#F8FAFC',
+                    border: '1px solid #E2E8F0',
+                    display: 'flex',
+                    alignItems: 'baseline',
+                    justifyContent: 'space-between',
+                  }}
+                >
+                  <Box>
+                    <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 600, display: 'block' }}>
+                      Package Price
+                    </Typography>
+                    {pkg.startingPrice ? (
+                      <Typography variant="h4" sx={{ fontWeight: 900, color: 'primary.main' }}>
+                        ₹{pkg.startingPrice.toLocaleString('en-IN')}
+                      </Typography>
+                    ) : (
+                      <Typography variant="h5" sx={{ fontWeight: 800, color: 'primary.main' }}>
+                        Best Rate on Inquiry
+                      </Typography>
+                    )}
+                  </Box>
+                  <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 600 }}>
+                    Per Person (All inclusive)
+                  </Typography>
+                </Box>
+
+                {/* Direct Action Buttons */}
+                <Stack spacing={1.5} sx={{ mb: 3 }}>
+                  <Button
+                    component="a"
+                    href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(
+                      `Hi Vighnaharta Tours! I would like to book or inquire about "${pkg.title}" (${pkg.days}D/${pkg.nights}N). Please share upcoming dates and booking procedure.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="contained"
+                    size="large"
+                    fullWidth
+                    startIcon={<WhatsAppIcon />}
+                    sx={{
+                      backgroundColor: '#25D366',
+                      color: '#FFFFFF',
+                      fontWeight: 800,
+                      py: 1.5,
+                      borderRadius: 2.5,
+                      fontSize: '1rem',
+                      boxShadow: '0 8px 24px rgba(37, 211, 102, 0.35)',
+                      '&:hover': {
+                        backgroundColor: '#1EBE5D',
+                      },
+                    }}
+                  >
+                    Book on WhatsApp
+                  </Button>
+
+                  <Button
+                    component="a"
+                    href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`}
+                    variant="outlined"
+                    size="large"
+                    fullWidth
+                    startIcon={<PhoneIcon />}
+                    sx={{
+                      fontWeight: 700,
+                      py: 1.3,
+                      borderRadius: 2.5,
+                      color: 'primary.main',
+                      borderColor: 'primary.main',
+                      '&:hover': {
+                        backgroundColor: 'rgba(18, 59, 93, 0.05)',
+                        borderColor: 'primary.dark',
+                      },
+                    }}
+                  >
+                    Call Host: {siteConfig.contact.phone}
+                  </Button>
+
+                  <Button
+                    component="a"
+                    href={`mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(`Booking Inquiry: ${pkg.title}`)}`}
+                    variant="text"
+                    size="small"
+                    fullWidth
+                    startIcon={<EmailIcon />}
+                    sx={{
+                      fontWeight: 600,
+                      color: 'text.secondary',
+                      '&:hover': {
+                        color: 'primary.main',
+                      },
+                    }}
+                  >
+                    Send Email Inquiry
+                  </Button>
+                </Stack>
+
+                {/* Assurance Badges */}
+                <Box
+                  sx={{
+                    pt: 2.5,
+                    borderTop: '1px solid #E2E8F0',
+                  }}
+                >
+                  <Stack spacing={1.25}>
+                    {[
+                      'Direct coordination with your tour host',
+                      'Customizable dates for private groups',
+                      'Transparent pricing — no hidden fees',
+                      '24/7 on-ground assistance during trip',
+                    ].map((perk, idx) => (
+                      <Box key={idx} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                        <CheckCircleIcon sx={{ fontSize: 16, color: '#16A34A' }} />
+                        <Typography variant="caption" sx={{ color: '#475569', fontWeight: 600 }}>
+                          {perk}
+                        </Typography>
+                      </Box>
+                    ))}
+                  </Stack>
+                </Box>
               </Paper>
             </Box>
           </Grid>

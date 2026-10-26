@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Box,
   Container,
@@ -12,7 +13,6 @@ import {
   Stack,
   Chip,
 } from '@mui/material';
-import ExploreIcon from '@mui/icons-material/Explore';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -59,22 +59,56 @@ export default function SiteFooter() {
               sx={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: 1.5,
+                gap: 2,
                 textDecoration: 'none',
                 mb: 2.5,
               }}
             >
-              <ExploreIcon sx={{ fontSize: 34, color: '#F4A261' }} />
-              <Typography
-                variant="h5"
+              <Box
                 sx={{
-                  fontWeight: 800,
-                  color: '#FFFFFF',
-                  letterSpacing: '-0.02em',
+                  position: 'relative',
+                  width: 52,
+                  height: 52,
+                  borderRadius: '50%',
+                  overflow: 'hidden',
+                  border: '2px solid #F4A261',
+                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.4)',
+                  flexShrink: 0,
                 }}
               >
-                {siteConfig.name}
-              </Typography>
+                <Image
+                  src={siteConfig.logoPath}
+                  alt={siteConfig.name}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="52px"
+                />
+              </Box>
+              <Box>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 800,
+                    color: '#FFFFFF',
+                    letterSpacing: '-0.02em',
+                    lineHeight: 1.2,
+                  }}
+                >
+                  {siteConfig.name}
+                </Typography>
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: '#F4A261',
+                    fontWeight: 700,
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    display: 'block',
+                  }}
+                >
+                  {siteConfig.tagline}
+                </Typography>
+              </Box>
             </Box>
 
             <Typography
@@ -269,7 +303,7 @@ export default function SiteFooter() {
                   </Typography>
                   <Typography
                     component="a"
-                    href={`tel:${siteConfig.contact.phone}`}
+                    href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`}
                     variant="body2"
                     sx={{ color: '#CBD5E1', textDecoration: 'none', '&:hover': { color: '#FFF' } }}
                   >

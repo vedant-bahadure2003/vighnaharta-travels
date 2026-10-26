@@ -1,14 +1,14 @@
 export const siteConfig = {
-  name: 'Vighnaharta Travels',
-  tagline: 'Your Next Great Journey Starts Here',
+  name: 'Vighnaharta Tours and Adventures',
+  tagline: 'Explore • Experience • Excel',
   shortDescription:
-    'Crafting unforgettable travel experiences across India — from sacred pilgrimages to thrilling adventures.',
-  logoPath: '/images/brand/logo.png',
+    'Crafting unforgettable travel experiences across India — from sacred pilgrimages to thrilling adventures and serene retreats.',
+  logoPath: '/images/brand/logooo.jpeg',
 
-  // Owner details — replace with actual information
+  // Owner / Lead Host details
   owner: {
-    name: '[Owner Name]',
-    role: 'Founder & Travel Host',
+    name: 'Lead Travel Host',
+    role: 'Founder & Expedition Host',
     introduction:
       'Passionate about creating meaningful travel experiences that bring people together. Every trip is thoughtfully planned to ensure comfort, adventure, and lasting memories.',
     philosophy:
@@ -23,12 +23,12 @@ export const siteConfig = {
     },
   },
 
-  // Contact details — replace with actual information
+  // Contact details
   contact: {
-    phone: '[Your Phone Number]',
-    whatsapp: '[Your WhatsApp Number]',
-    email: '[your.email@example.com]',
-    address: '[Your Business Address]',
+    phone: '+91 9009 25 9005',
+    whatsapp: '+91 98819 53564',
+    email: 'Vighnahartatours.Adventure@gmail.com',
+    address: 'Pan-India Tours & Expeditions',
   },
 
   social: {
@@ -40,10 +40,10 @@ export const siteConfig = {
 
   // SEO defaults
   seo: {
-    defaultTitle: 'Vighnaharta Travels — Unforgettable Travel Experiences Across India',
+    defaultTitle: 'Vighnaharta Tours & Adventures — Unforgettable Travel Experiences Across India',
     defaultDescription:
-      'Discover handcrafted travel experiences across India with Vighnaharta Travels. Group trips, pilgrimages, adventure tours, and customized itineraries.',
-    siteUrl: 'https://www.example.com',
+      'Discover handcrafted travel experiences across India with Vighnaharta Tours and Adventures. Group trips, pilgrimages, adventure tours, and customized itineraries.',
+    siteUrl: 'https://vighnahartatours.com',
   },
 
   // Enquiry form settings

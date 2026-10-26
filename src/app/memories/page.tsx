@@ -48,7 +48,7 @@ export default function MemoriesPage() {
         <SectionHeader
           eyebrow="Travel Memories"
           title="Captured Moments From Our Expeditions"
-          subtitle="Real smiles, unscripted camaraderie, and breathtaking landscapes from journeys led by Vighnaharta Travels."
+          subtitle="Real smiles, unscripted camaraderie, and breathtaking landscapes from journeys led by Vighnaharta Tours and Adventures."
         />
 
         <Grid container spacing={3.5} sx={{ mb: 8 }}>

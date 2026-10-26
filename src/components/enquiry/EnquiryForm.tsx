@@ -256,7 +256,7 @@ export default function EnquiryForm({
               <TextField
                 fullWidth
                 label="Email Address (Optional)"
-                placeholder="e.g. rahul@example.com"
+                placeholder="e.g. rahul@gmail.com"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 error={!!errors.email}

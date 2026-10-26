@@ -110,7 +110,7 @@ export default function FAQSection() {
             Have a different question or special travel requirement?
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary', mb: 3, maxWidth: 500, mx: 'auto' }}>
-            We are always happy to help. Send us a message on WhatsApp or get in touch through our contact form.
+            We are always happy to help. Send us a message on WhatsApp or call our trip host directly.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ justifyContent: 'center' }}>
             <Button
@@ -132,7 +132,7 @@ export default function FAQSection() {
               color="primary"
               sx={{ fontWeight: 600, px: 3 }}
             >
-              Contact Form
+              Contact Options
             </Button>
           </Stack>
         </Box>

@@ -54,7 +54,7 @@ export default function AboutPage() {
         <SectionHeader
           eyebrow="Our Story & Vision"
           title="Traveling With Heart, Purpose, and Personal Care"
-          subtitle="At Vighnaharta Travels, we believe travel isn't just about moving across coordinates — it's about the connections we forge and the peace we discover."
+          subtitle="At Vighnaharta Tours and Adventures, we believe travel isn't just about moving across coordinates — it's about the connections we forge and the peace we discover."
         />
 
         {/* Founder Story Feature */}
@@ -138,7 +138,7 @@ export default function AboutPage() {
                 variant="body1"
                 sx={{ color: 'text.secondary', lineHeight: 1.8, mb: 2.5, fontSize: '1rem' }}
               >
-                Vighnaharta Travels was born from a simple belief: the most profound travel experiences happen when you travel with trusted hosts who genuinely care about your comfort and happiness.
+                Vighnaharta Tours and Adventures was born from a simple belief: the most profound travel experiences happen when you travel with trusted hosts who genuinely care about your comfort and happiness.
               </Typography>
 
               <Typography

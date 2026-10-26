@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Drawer,
   Box,
@@ -14,9 +15,9 @@ import {
   Divider,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import ExploreIcon from '@mui/icons-material/Explore';
 import PhoneIcon from '@mui/icons-material/Phone';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import EmailIcon from '@mui/icons-material/Email';
 import { navigationLinks } from '@/data/navigation';
 import { siteConfig } from '@/data/site-config';
 
@@ -73,22 +74,57 @@ export default function MobileNavigation({
             sx={{
               display: 'flex',
               alignItems: 'center',
-              gap: 1,
+              gap: 1.5,
               textDecoration: 'none',
             }}
           >
-            <ExploreIcon sx={{ fontSize: 28, color: 'primary.main' }} />
-            <Typography
-              variant="h6"
+            <Box
               sx={{
-                fontWeight: 800,
-                fontSize: '1.1rem',
-                color: 'primary.main',
-                letterSpacing: '-0.02em',
+                position: 'relative',
+                width: 44,
+                height: 44,
+                borderRadius: '50%',
+                overflow: 'hidden',
+                flexShrink: 0,
+                boxShadow: '0 2px 8px rgba(18, 59, 93, 0.15)',
+                border: '2px solid #E2E8F0',
               }}
             >
-              {siteConfig.name}
-            </Typography>
+              <Image
+                src={siteConfig.logoPath}
+                alt={siteConfig.name}
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="44px"
+              />
+            </Box>
+            <Box>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 800,
+                  fontSize: '1rem',
+                  color: 'primary.main',
+                  letterSpacing: '-0.02em',
+                  lineHeight: 1.2,
+                }}
+              >
+                {siteConfig.name}
+              </Typography>
+              <Typography
+                variant="caption"
+                sx={{
+                  fontSize: '0.65rem',
+                  fontWeight: 700,
+                  color: '#D97706',
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                  display: 'block',
+                }}
+              >
+                {siteConfig.tagline}
+              </Typography>
+            </Box>
           </Box>
           <IconButton
             onClick={onClose}
@@ -163,17 +199,17 @@ export default function MobileNavigation({
           Plan Your Trip
         </Button>
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, mt: 1 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25, mt: 1 }}>
           <Box
             component="a"
-            href={`tel:${siteConfig.contact.phone}`}
+            href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`}
             sx={{
               display: 'flex',
               alignItems: 'center',
               gap: 1.5,
               textDecoration: 'none',
               color: 'text.secondary',
-              fontSize: '0.875rem',
+              fontSize: '0.85rem',
               '&:hover': { color: 'primary.main' },
             }}
           >
@@ -191,12 +227,29 @@ export default function MobileNavigation({
               gap: 1.5,
               textDecoration: 'none',
               color: 'text.secondary',
-              fontSize: '0.875rem',
+              fontSize: '0.85rem',
               '&:hover': { color: '#25D366' },
             }}
           >
             <WhatsAppIcon sx={{ fontSize: 18, color: '#25D366' }} />
-            <span>WhatsApp Enquiry</span>
+            <span>WhatsApp: {siteConfig.contact.whatsapp}</span>
+          </Box>
+          <Box
+            component="a"
+            href={`mailto:${siteConfig.contact.email}`}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 1.5,
+              textDecoration: 'none',
+              color: 'text.secondary',
+              fontSize: '0.825rem',
+              wordBreak: 'break-all',
+              '&:hover': { color: 'primary.main' },
+            }}
+          >
+            <EmailIcon sx={{ fontSize: 18, color: 'primary.main' }} />
+            <span>{siteConfig.contact.email}</span>
           </Box>
         </Box>
       </Box>

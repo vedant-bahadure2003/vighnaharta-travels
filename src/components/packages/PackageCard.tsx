@@ -16,7 +16,9 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import GroupsIcon from '@mui/icons-material/Groups';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { TourPackage } from '@/types/package';
+import { siteConfig } from '@/data/site-config';
 
 interface PackageCardProps {
   pkg: TourPackage;
@@ -217,21 +219,32 @@ export default function PackageCard({ pkg }: PackageCardProps) {
               color="primary"
               fullWidth
               size="small"
-              sx={{ fontWeight: 600 }}
+              sx={{ fontWeight: 600, borderRadius: 2 }}
             >
-              Details
+              View Tour
             </Button>
             <Button
-              component={Link}
-              href={`/contact?destination=${encodeURIComponent(pkg.destination)}&travelType=${encodeURIComponent(getTravelTypeLabel(pkg.travelType))}`}
+              component="a"
+              href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(
+                `Hi Vighnaharta Tours! I would like to book or inquire about the "${pkg.title}" package.`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
               variant="contained"
-              color="warning"
               fullWidth
               size="small"
-              endIcon={<ArrowForwardIcon sx={{ fontSize: 16 }} />}
-              sx={{ fontWeight: 700 }}
+              startIcon={<WhatsAppIcon sx={{ fontSize: 16 }} />}
+              sx={{
+                fontWeight: 700,
+                borderRadius: 2,
+                backgroundColor: '#25D366',
+                color: '#FFFFFF',
+                '&:hover': {
+                  backgroundColor: '#1EBE5D',
+                },
+              }}
             >
-              Enquire
+              WhatsApp
             </Button>
           </Stack>
         </Box>
